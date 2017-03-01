@@ -6,6 +6,12 @@
 /* Define to 1 if you have the <cstdlib> header file. */
 #cmakedefine HAVE_CSTDLIB 1
 
+/* Define if <atomic> is available. */
+#cmakedefine HAVE_CXX_ATOMIC 1
+
+/* Define if <mutex> is available. */
+#cmakedefine HAVE_CXX_MUTEX 1
+
 /* Define to 1 if `st_mtime' is a member of `struct stat'. */
 #cmakedefine HAVE_STRUCT_STAT_ST_MTIME
 
