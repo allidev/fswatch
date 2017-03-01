@@ -50,7 +50,7 @@ INCLUDE(CheckIncludeFileCXX)
 INCLUDE(CheckStructHasMember)
 INCLUDE(CheckSymbolExists)
 
-CHECK_INCLUDE_FILES(sys/inotify.h HAVE_SYS_INOTIFY)
+CHECK_INCLUDE_FILES(sys/inotify.h HAVE_SYS_INOTIFY_H)
 
 if (HAVE_SYS_INOTIFY_H)
     set(LIB_SOURCE_FILES
