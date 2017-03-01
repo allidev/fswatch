@@ -6,5 +6,13 @@
 /* Define to 1 if `st_mtime' is a member of `struct stat'. */
 #cmakedefine HAVE_STRUCT_STAT_ST_MTIME
 
+/* Define to 1 if you have the declaration of `kevent', and to 0 if you don't.
+   */
+#cmakedefine HAVE_DECL_KEVENT 1
+
+/* Define to 1 if you have the declaration of `kqueue', and to 0 if you don't.
+   */
+#cmakedefine HAVE_DECL_KQUEUE 1
+
 /* Define if the file events are supported by OS X FSEvents API. */
 #cmakedefine HAVE_FSEVENTS_FILE_EVENTS 1
