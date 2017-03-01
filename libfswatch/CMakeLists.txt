@@ -48,6 +48,7 @@ set(LIB_SOURCE_FILES
 INCLUDE(CheckIncludeFiles)
 INCLUDE(CheckIncludeFileCXX)
 INCLUDE(CheckStructHasMember)
+INCLUDE(CheckSymbolExists)
 
 CHECK_INCLUDE_FILES(sys/inotify.h HAVE_SYS_INOTIFY)
 
@@ -65,6 +66,7 @@ if (HAVE_SYS_EVENT_H)
             ${LIB_SOURCE_FILES}
             src/libfswatch/c++/kqueue_monitor.cpp
             src/libfswatch/c++/kqueue_monitor.hpp)
+    CHECK_SYMBOL_EXISTS(kqueue sys/event/h HAVE_DECL_KQUEUE)
 endif (HAVE_SYS_EVENT_H)
 
 CHECK_INCLUDE_FILES(port.h HAVE_PORT_H)
