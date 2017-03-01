@@ -57,6 +57,9 @@ if (HAVE_SYS_INOTIFY_H)
             ${LIB_SOURCE_FILES}
             src/libfswatch/c++/inotify_monitor.cpp
             src/libfswatch/c++/inotify_monitor.hpp)
+    CHECK_SYMBOL_EXISTS(inotify_init "sys/inotify.h" HAVE_DECL_INOTIFY_INIT)
+    CHECK_SYMBOL_EXISTS(inotify_add_watch "sys/inotify.h" HAVE_DECL_INOTIFY_ADD_WATCH)
+    CHECK_SYMBOL_EXISTS(inotify_rm_watch "sys/inotify.h" HAVE_DECL_INOTIFY_RM_WATCH)
 endif (HAVE_SYS_INOTIFY_H)
 
 CHECK_INCLUDE_FILES(sys/event.h HAVE_SYS_EVENT_H)
