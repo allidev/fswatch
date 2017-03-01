@@ -75,6 +75,8 @@ if (HAVE_PORT_H)
             src/libfswatch/c++/fen_monitor.hpp)
 endif (HAVE_PORT_H)
 
+CHECK_INCLUDE_FILES(cstdlib HAVE_CSTDLIB)
+
 if (WIN32)
     CHECK_INCLUDE_FILES(sys/cygwin.h HAVE_CYGWIN)
 
