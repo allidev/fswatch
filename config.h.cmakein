@@ -1,0 +1,25 @@
+
+/* Define to 1 if translation of program messages to the user's native
+   language is requested. */
+#cmakedefine ENABLE_NLS
+
+/* Define to 1 if you have the <getopt.h> header file. */
+#cmakedefine HAVE_GETOPT_H
+
+/* Define to 1 if you have the `getopt_long' function. */
+#cmakedefine HAVE_GETOPT_LONG
+
+/* Name of package */
+#cmakedefine PACKAGE "fswatch"
+
+/* Define to the full name of this package. */
+#cmakedefine PACKAGE_NAME "fswatch"
+
+/* Define to the full name and version of this package. */
+#cmakedefine PACKAGE_STRING "fswatch 1.9.3"
+
+/* Define to the address where bug reports for this package should be sent. */
+#cmakedefine PACKAGE_BUGREPORT "enrico.m.crisostomo@gmail.com"
+
+/* Define to the home page for this package. */
+#cmakedefine PACKAGE_URL "https://github.com/emcrisostomo/fswatch"

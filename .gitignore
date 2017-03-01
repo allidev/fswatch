@@ -32,6 +32,8 @@ out/*
 
 # NetBeans
 nbproject/
+# build folders
+build/
 
 # GNU Build System
 autoscan.log
@@ -126,3 +128,10 @@ scripts/fswatch-run-zsh
 
 # Output files
 man/fswatch.7
+
+# temp files
+*.swp
+
+# include ignored files
+!config.h.cmakein
+
