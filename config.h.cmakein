@@ -3,6 +3,9 @@
    language is requested. */
 #cmakedefine ENABLE_NLS
 
+/* Define to 1 if you have the `atexit' function. */
+#cmakedefine HAVE_ATEXIT 1
+
 /* Define to 1 if you have the <getopt.h> header file. */
 #cmakedefine HAVE_GETOPT_H
 
