@@ -46,6 +46,7 @@ set(LIB_SOURCE_FILES
         libfswatch_config.h)
 
 INCLUDE(CheckIncludeFiles)
+INCLUDE(CheckIncludeFileCXX)
 INCLUDE(CheckStructHasMember)
 
 CHECK_INCLUDE_FILES(sys/inotify.h HAVE_SYS_INOTIFY)
@@ -75,7 +76,7 @@ if (HAVE_PORT_H)
             src/libfswatch/c++/fen_monitor.hpp)
 endif (HAVE_PORT_H)
 
-CHECK_INCLUDE_FILES(cstdlib HAVE_CSTDLIB)
+CHECK_INCLUDE_FILE_CXX(cstdlib HAVE_CSTDLIB)
 
 if (WIN32)
     CHECK_INCLUDE_FILES(sys/cygwin.h HAVE_CYGWIN)
