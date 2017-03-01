@@ -49,6 +49,9 @@ INCLUDE(CheckIncludeFiles)
 INCLUDE(CheckIncludeFileCXX)
 INCLUDE(CheckStructHasMember)
 INCLUDE(CheckSymbolExists)
+INCLUDE(CheckCXXCompilerFlag)
+
+CHECK_CXX_COMPILER_FLAG(-std=c++11 HAVE_CXX11)
 
 CHECK_INCLUDE_FILES(sys/inotify.h HAVE_SYS_INOTIFY_H)
 
