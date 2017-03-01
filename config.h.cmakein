@@ -15,6 +15,9 @@
 /* Define to 1 if you have the `getopt_long' function. */
 #cmakedefine HAVE_GETOPT_LONG 1
 
+/* Define to 1 if you have the <memory.h> header file. */
+#cmakedefine HAVE_MEMORY_H 1
+
 /* Name of package */
 #cmakedefine PACKAGE "fswatch"
 
