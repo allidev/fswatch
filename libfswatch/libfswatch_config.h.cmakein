@@ -15,6 +15,12 @@
 /* Define if <mutex> is available. */
 #cmakedefine HAVE_CXX_MUTEX 1
 
+/* Define if the thread_local storage specified is available. */
+#cmakedefine HAVE_CXX_THREAD_LOCAL 1
+
+/* Define if std::unique_ptr in <memory> is available. */
+#cmakedefine HAVE_CXX_UNIQUE_PTR 1
+
 /* Define to 1 if `st_mtime' is a member of `struct stat'. */
 #cmakedefine HAVE_STRUCT_STAT_ST_MTIME 1
 
