@@ -67,7 +67,7 @@ AM_COND_IF([HAVE_DOXYGEN], [AC_CONFIG_FILES(doc/doxygen/Doxyfile)])
 
 # Initialize gettext
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.19.4])
+AM_GNU_GETTEXT_VERSION([0.18.3])
 
 # Configure C++ compiler
 AX_CXX_COMPILE_STDCXX_11

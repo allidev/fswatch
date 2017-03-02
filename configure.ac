@@ -56,7 +56,7 @@ AC_SUBST([LIBTOOL_DEPS])
 
 # Initialize gettext.
 AM_GNU_GETTEXT([external])
-AM_GNU_GETTEXT_VERSION([0.19.4])
+AM_GNU_GETTEXT_VERSION([0.18.3])
 
 # Checks for programs.
 
