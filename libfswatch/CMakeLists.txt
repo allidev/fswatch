@@ -115,6 +115,10 @@ if (WIN32)
     endif (HAVE_CYGWIN)
 endif (WIN32)
 
+if (UNIX AND NOT APPLE AND NOT ANDROID)
+    set(EXTRA_LIBS pthread)
+endif (UNIX AND NOT APPLE AND NOT ANDROID)
+
 if (APPLE)
     CHECK_INCLUDE_FILES(CoreServices/CoreServices.h HAVE_FSEVENTS_FILE_EVENTS)
 
@@ -136,5 +140,4 @@ add_library(libfswatch SHARED ${LIB_SOURCE_FILES})
 configure_file(libfswatch_config.h.cmakein ${PROJECT_SOURCE_DIR}/libfswatch/libfswatch_config.h)
 target_include_directories(libfswatch PUBLIC src)
 target_link_libraries(libfswatch 
-	pthread
-	${CORESERVICES_LIBRARY})
+	${EXTRA_LIBS})
