@@ -135,4 +135,6 @@ CHECK_STRUCT_HAS_MEMBER("struct stat" st_mtime sys/stat.h HAVE_STRUCT_STAT_ST_MT
 add_library(libfswatch SHARED ${LIB_SOURCE_FILES})
 configure_file(libfswatch_config.h.cmakein ${PROJECT_SOURCE_DIR}/libfswatch/libfswatch_config.h)
 target_include_directories(libfswatch PUBLIC src)
-target_link_libraries(libfswatch ${CORESERVICES_LIBRARY})
+target_link_libraries(libfswatch 
+	pthread
+	${CORESERVICES_LIBRARY})
