@@ -118,9 +118,11 @@ namespace fsw
                                   const struct stat& fd_stat)
   {
     // TODO: Consider optionally adding the IN_EXCL_UNLINK flag.
+	uint32_t event_mask = IN_CREATE | IN_DELETE | IN_MODIFY |
+		IN_MOVED_FROM | IN_MOVED_TO | IN_CLOSE_WRITE;
     int inotify_desc = inotify_add_watch(impl->inotify_monitor_handle,
                                          path.c_str(),
-                                         IN_ALL_EVENTS);
+                                         event_mask);
 
     if (inotify_desc == -1)
     {
