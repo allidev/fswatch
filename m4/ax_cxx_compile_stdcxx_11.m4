@@ -35,6 +35,6 @@
 
 #serial 16
 
-include([ax_cxx_compile_stdcxx.m4])
+AX_REQUIRE_DEFINED([AX_CXX_COMPILE_STDCXX])
 
 AC_DEFUN([AX_CXX_COMPILE_STDCXX_11], [AX_CXX_COMPILE_STDCXX([11], [$1], [$2])])
