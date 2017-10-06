@@ -244,10 +244,10 @@ AC_CHECK_TYPE([std::unique_ptr<std::string>],
 # Checks for library functions.
 AC_FUNC_LSTAT_FOLLOWS_SLASHED_SYMLINK
 AC_CHECK_FUNCS([modf],     [], [AC_MSG_ERROR([The modf function cannot be found.])])
-AM_CONDITIONAL([USE_INOTIFY],
+AM_COND_IF([USE_INOTIFY],
 [
   AC_CHECK_FUNCS([select],   [], [AC_MSG_ERROR([The select function cannot be found.])])
-])
+], [])
 
 # Check if realpath is available: if it is not and the host OS is Windows, then
 # build its implementation, otherwise fail
