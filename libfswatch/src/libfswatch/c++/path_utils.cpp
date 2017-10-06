@@ -13,11 +13,14 @@
  * You should have received a copy of the GNU General Public License along with
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#ifdef HAVE_CONFIG_H
+#  include "libfswatch_config.h"
+#endif
 #include "gettext_defs.h"
 #include "path_utils.hpp"
 #include "c/libfswatch_log.h"
 #if defined(HAVE_WINDOWS) && !defined(HAVE_CYGWIN)
-#include "c/windows/realpath.h"
+#  include "c/windows/realpath.h"
 #endif
 #include <dirent.h>
 #include <cstdlib>
@@ -88,7 +91,11 @@ namespace fsw
 
   bool lstat_path(const string& path, struct stat& fd_stat)
   {
+#if defined(HAVE_WINDOWS) && !defined(HAVE_CYGWIN)
+    if (stat(path.c_str(), &fd_stat) != 0)
+#else
     if (lstat(path.c_str(), &fd_stat) != 0)
+#endif
     {
       fsw_logf_perror(_("Cannot lstat %s"), path.c_str());
 

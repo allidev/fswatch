@@ -227,11 +227,13 @@ static void close_monitor()
   if (active_monitor) active_monitor->stop();
 }
 
+#if defined(HAVE_WINDOWS) && !defined(HAVE_CYGWIN)
 static void close_handler(int signal)
 {
   FSW_ELOG(_("Executing termination handler.\n"));
   close_monitor();
 }
+#endif
 
 static bool parse_event_filter(const char *optarg)
 {
@@ -266,6 +268,7 @@ static bool validate_latency(double latency)
 
 static void register_signal_handlers()
 {
+#if defined(HAVE_WINDOWS) && !defined(HAVE_CYGWIN)
   struct sigaction action;
   action.sa_handler = close_handler;
   sigemptyset(&action.sa_mask);
@@ -297,6 +300,7 @@ static void register_signal_handlers()
   {
     cerr << _("SIGINT handler registration failed") << endl;
   }
+#endif
 }
 
 static void print_event_path(const event& evt)
