@@ -18,6 +18,7 @@
  *
  */
 
+#include "realpath.h"
 #include <io.h>
 #include <stdlib.h>
 #include <errno.h>
