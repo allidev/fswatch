@@ -16,7 +16,7 @@
 #include "gettext_defs.h"
 #include "path_utils.hpp"
 #include "c/libfswatch_log.h"
-#if defined(BUILD_WIN_REALPATH)
+#if defined(HAVE_WINDOWS) && !defined(HAVE_CYGWIN)
 #include "c/windows/realpath.h"
 #endif
 #include <dirent.h>
