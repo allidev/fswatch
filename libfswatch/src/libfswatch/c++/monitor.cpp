@@ -24,7 +24,7 @@
 #include <cstdlib>
 #include <memory>
 #include <thread>
-#include <regex.h>
+#include <regex>
 #include <sstream>
 #include <time.h>
 
@@ -35,7 +35,7 @@ namespace fsw
 {
   struct compiled_monitor_filter
   {
-    regex_t regex;
+    std::regex regex;
     fsw_filter_type type;
   };
 
@@ -120,13 +120,16 @@ namespace fsw
 
   void monitor::add_filter(const monitor_filter& filter)
   {
-    regex_t regex;
-    int flags = 0;
+    std::regex regex;
+    regex_constants::syntax_option_type flags = regex_constants::ECMAScript;
 
-    if (!filter.case_sensitive) flags |= REG_ICASE;
-    if (filter.extended) flags |= REG_EXTENDED;
+    if (!filter.case_sensitive) flags |= regex_constants::icase;
+    if (filter.extended) flags |= regex_constants::extended;
 
-    if (regcomp(&regex, filter.text.c_str(), flags))
+    try {
+      regex = std::regex(filter.text, flags);
+    }
+    catch (const regex_error &e)
     {
       throw libfsw_exception(
         string_utils::string_from_format(
@@ -200,7 +203,7 @@ namespace fsw
 
     for (const auto& filter : filters)
     {
-      if (regexec(&filter.regex, path, 0, nullptr, 0) == 0)
+      if (regex_match(path, filter.regex, regex_constants::match_default))
       {
         if (filter.type == fsw_filter_type::filter_include) return true;
 
@@ -225,7 +228,6 @@ namespace fsw
   {
     stop();
 
-    for (auto& re : filters) regfree(&re.regex);
   }
 
   static monitor *create_default_monitor(vector<string> paths,
