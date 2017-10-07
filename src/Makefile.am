@@ -22,6 +22,7 @@ fswatch_SOURCES += gettext.h
 AM_CPPFLAGS  = -I$(top_srcdir)/libfswatch/src
 # Prepare gettext-related symbols used by programs
 AM_CPPFLAGS += -DLOCALEDIR=\"$(localedir)\"
+AM_CPPFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0
 
 # Link fswatch against dependent libraries
 fswatch_LDADD  = $(top_builddir)/libfswatch/src/libfswatch/libfswatch.la
