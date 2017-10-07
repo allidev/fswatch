@@ -46,7 +46,7 @@ if USE_INOTIFY
   libfswatch_la_SOURCES += c++/inotify_monitor.cpp
 endif
 if USE_WINDOWS
-if USE_CYGWIN
+#if USE_CYGWIN
   libfswatch_la_SOURCES += c++/windows_monitor.cpp
   libfswatch_la_SOURCES += c++/windows/win_handle.cpp
   libfswatch_la_SOURCES += c++/windows/win_handle.hpp
@@ -58,7 +58,7 @@ if USE_CYGWIN
   libfswatch_la_SOURCES += c++/windows/win_paths.hpp
   libfswatch_la_SOURCES += c++/windows/win_directory_change_event.cpp
   libfswatch_la_SOURCES += c++/windows/win_directory_change_event.hpp
-endif
+#endif
 if BUILD_WIN_REALPATH
   libfswatch_la_SOURCES += c/windows/realpath.c
 endif
