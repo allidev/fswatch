@@ -30,6 +30,7 @@
 #ifndef FSW__MONITOR_H
 #  define FSW__MONITOR_H
 
+#  include "common.hpp"
 #  include "filter.hpp"
 #  include <vector>
 #  include <string>
@@ -159,7 +160,7 @@ namespace fsw
      * @param context An optional pointer to context data.  The monitor stores a
      *                copy of this pointer to pass it to the @p callback.
      */
-    monitor(std::vector<std::string> paths,
+    LIBFSWATCH_API monitor(std::vector<std::string> paths,
             FSW_EVENT_CALLBACK *callback,
             void *context = nullptr);
 
