@@ -59,9 +59,8 @@ if USE_WINDOWS
   libfswatch_la_SOURCES += c++/windows/win_directory_change_event.cpp
   libfswatch_la_SOURCES += c++/windows/win_directory_change_event.hpp
 #endif
-if USE_CYGWIN
-else
-  AM_CPPFLAGS = -D_GLIBCXX_USE_CXX11_ABI=0 @AM_CPPFLAGS@
+if !USE_CYGWIN
+  AM_CPPFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0
 endif
 if BUILD_WIN_REALPATH
   libfswatch_la_SOURCES += c/windows/realpath.c
