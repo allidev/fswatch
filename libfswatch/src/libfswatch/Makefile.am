@@ -67,7 +67,8 @@ endif
 libfswatch_la_LDFLAGS  = -version-info $(LIBFSWATCH_API_VERSION)
 libfswatch_la_LDFLAGS += @LTLIBINTL@
 
-if OS_CYGWIN
+#if OS_CYGWIN
+if USE_WINDOWS
   libfswatch_la_LDFLAGS += -no-undefined
 endif
 
