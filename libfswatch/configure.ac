@@ -49,7 +49,7 @@ AC_PROG_CXX([clang++ g++])
 
 # Initialize libtool
 LT_PREREQ([2.4.2])
-LT_INIT([win32-dll])
+LT_INIT
 AC_SUBST([LIBTOOL_DEPS])
 
 # OS-specific treatment
@@ -192,6 +192,7 @@ AM_COND_IF([USE_WINDOWS],
   [],
   [
     AC_DEFINE([LIBFSWATCH_COMMON_EXPORTS], [1], [win32-dll])
+    LT_INIT([win32-dll])
   ])]
 )
 
