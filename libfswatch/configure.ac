@@ -192,8 +192,7 @@ AM_COND_IF([USE_WINDOWS],
   [],
   [
     AC_DEFINE([LIBFSWATCH_COMMON_EXPORTS], [1], [win32-dll])
-  ])],
-  []
+  ])]
 )
 
 # Some compilers declare to conform to C++11 but the library does not.
