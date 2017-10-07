@@ -61,6 +61,7 @@ if USE_WINDOWS
 #endif
 if !USE_CYGWIN
   AM_CPPFLAGS += -D_GLIBCXX_USE_CXX11_ABI=0
+  AM_CPPFLAGS += -DLIBFSWATCH_COMMON_EXPORTS=1
 endif
 if BUILD_WIN_REALPATH
   libfswatch_la_SOURCES += c/windows/realpath.c

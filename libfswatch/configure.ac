@@ -191,7 +191,6 @@ AM_COND_IF([USE_WINDOWS],
   [AM_COND_IF([USE_CYGWIN],
   [],
   [
-    AC_DEFINE([LIBFSWATCH_COMMON_EXPORTS], [1], [win32-dll])
     LT_INIT([win32-dll])
   ])]
 )
