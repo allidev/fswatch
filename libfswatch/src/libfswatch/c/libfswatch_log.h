@@ -26,40 +26,41 @@
 #ifndef LIBFSW_LOG_H
 #  define LIBFSW_LOG_H
 
+#include "../c++/common.hpp"
 #include <stdio.h>
 
 /**
  * Prints the specified message to standard output.
  */
-void fsw_log(const char * msg);
+LIBFSWATCH_API void fsw_log(const char * msg);
 
 /**
  * Prints the specified message to the specified file.
  */
-void fsw_flog(FILE * f, const char * msg);
+LIBFSWATCH_API void fsw_flog(FILE * f, const char * msg);
 
 /**
  * Formats the specified message and prints it to standard output.  The message
  * string format conforms with printf.
  */
-void fsw_logf(const char * format, ...);
+LIBFSWATCH_API void fsw_logf(const char * format, ...);
 
 /**
  * Formats the specified message and prints it to the specified file.  The
  * message string format conforms with printf.
  */
-void fsw_flogf(FILE * f, const char * format, ...);
+LIBFSWATCH_API void fsw_flogf(FILE * f, const char * format, ...);
 
 /**
  * Prints the specified message using perror.
  */
-void fsw_log_perror(const char * msg);
+LIBFSWATCH_API void fsw_log_perror(const char * msg);
 
 /**
  * Prints the specified message using perror.  The message string format
  * conforms with printf.
  */
-void fsw_logf_perror(const char * format, ...);
+LIBFSWATCH_API void fsw_logf_perror(const char * format, ...);
 
 /**
  * @brief Log the specified message to the standard output prepended by the

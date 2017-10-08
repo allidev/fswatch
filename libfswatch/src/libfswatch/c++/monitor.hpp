@@ -178,7 +178,7 @@ namespace fsw
      *
      * @see stop()
      */
-    virtual ~monitor();
+    LIBFSWATCH_API virtual ~monitor();
 
     /**
      * @brief This class is not copy constructible.
@@ -198,7 +198,7 @@ namespace fsw
      * @param name The name of the property.
      * @param value The value of the property.
      */
-    void set_property(const std::string& name, const std::string& value);
+    LIBFSWATCH_API void set_property(const std::string& name, const std::string& value);
 
     /**
      * @brief Sets the custom properties.
@@ -208,7 +208,7 @@ namespace fsw
      *
      * @param options The map containing the properties to set.
      */
-    void set_properties(const std::map<std::string, std::string> options);
+    LIBFSWATCH_API void set_properties(const std::map<std::string, std::string> options);
 
     /**
      * @brief Gets the value of a property.
@@ -219,7 +219,7 @@ namespace fsw
      * @param name The name of the property.
      * @return The value of the property.
      */
-    std::string get_property(std::string name);
+    LIBFSWATCH_API std::string get_property(std::string name);
 
     /**
      * @brief Sets the latency.
@@ -234,7 +234,7 @@ namespace fsw
      *
      * @param latency The latency value.
      */
-    void set_latency(double latency);
+    LIBFSWATCH_API void set_latency(double latency);
 
     /**
      * @brief Sets the _fire idle event_ flag.
@@ -247,7 +247,7 @@ namespace fsw
      * @param fire_idle_event @c true if idle events should be fired, @c false
      * otherwise.
      */
-    void set_fire_idle_event(bool fire_idle_event);
+    LIBFSWATCH_API void set_fire_idle_event(bool fire_idle_event);
 
     /**
      * @brief Notify buffer overflows as change events.
@@ -261,7 +261,7 @@ namespace fsw
      * @param overflow @c true if overflow should be notified, @c false
      * otherwise.
      */
-    void set_allow_overflow(bool overflow);
+    LIBFSWATCH_API void set_allow_overflow(bool overflow);
 
     /**
      * @brief Recursively scan subdirectories.
@@ -277,7 +277,7 @@ namespace fsw
      * @param recursive @c true if directories should be recursively, @c false
      * otherwise.
      */
-    void set_recursive(bool recursive);
+    LIBFSWATCH_API void set_recursive(bool recursive);
 
     /**
      * @brief Watch directories only.
@@ -295,7 +295,7 @@ namespace fsw
      * @param directory_only @c true if only directories should be watched,
      * @c flase otherwise.
      */
-    void set_directory_only(bool directory_only);
+    LIBFSWATCH_API void set_directory_only(bool directory_only);
 
     /**
      * @brief Add a path filter.
@@ -304,7 +304,7 @@ namespace fsw
      *
      * @param filter The filter to add.
      */
-    void add_filter(const monitor_filter& filter);
+    LIBFSWATCH_API void add_filter(const monitor_filter& filter);
 
     /**
      * @brief Set the path filters.
@@ -314,7 +314,7 @@ namespace fsw
      *
      * @param filters The filters to set.
      */
-    void set_filters(const std::vector<monitor_filter>& filters);
+    LIBFSWATCH_API void set_filters(const std::vector<monitor_filter>& filters);
 
     /**
      * @brief Follow symlinks.
@@ -329,7 +329,7 @@ namespace fsw
      * @param follow @c true if symbolic links should be followed, @c false
      * otherwise.
      */
-    void set_follow_symlinks(bool follow);
+    LIBFSWATCH_API void set_follow_symlinks(bool follow);
 
     /**
      * @brief Get the pointer to the context data.
@@ -339,7 +339,7 @@ namespace fsw
      *
      * @return The pointer to the context data.
      */
-    void *get_context() const;
+    LIBFSWATCH_API void *get_context() const;
 
     /**
      * @brief Set the context data.
@@ -353,7 +353,7 @@ namespace fsw
      *
      * @param context The pointer to the context data.
      */
-    void set_context(void *context);
+    LIBFSWATCH_API void set_context(void *context);
 
     /**
      * @brief Start the monitor.
@@ -376,7 +376,7 @@ namespace fsw
      * @see run()
      * @see stop()
      */
-    void start();
+    LIBFSWATCH_API void start();
 
     /**
      * @brief Stop the monitor.
@@ -392,7 +392,7 @@ namespace fsw
      * @see run()
      * @see start()
      */
-    void stop();
+    LIBFSWATCH_API void stop();
 
     /**
      * @brief Check whether the monitor is running.
@@ -401,7 +401,7 @@ namespace fsw
      *
      * @return @c true if the monitor is running, @c false otherwise.
      */
-    bool is_running();
+    LIBFSWATCH_API bool is_running();
 
     /**
      * @brief Add an event type filter.
@@ -410,7 +410,7 @@ namespace fsw
      *
      * @param filter The event type filter to add.
      */
-    void add_event_type_filter(const fsw_event_type_filter& filter);
+    LIBFSWATCH_API void add_event_type_filter(const fsw_event_type_filter& filter);
 
     /**
      * @brief Set the event type filters.
@@ -420,7 +420,7 @@ namespace fsw
      *
      * @param filters The filters to set.
      */
-    void set_event_type_filters(
+    LIBFSWATCH_API void set_event_type_filters(
       const std::vector<fsw_event_type_filter>& filters);
 
     /**
@@ -429,7 +429,7 @@ namespace fsw
      * @warning The ability of monitoring file access depends on a monitor
      * implementation.
      */
-    void set_watch_access(bool access);
+    LIBFSWATCH_API void set_watch_access(bool access);
 
   protected:
     /**
@@ -673,7 +673,7 @@ namespace fsw
      * found.
      * @see fsw::monitor()
      */
-    static monitor *create_monitor(fsw_monitor_type type,
+    LIBFSWATCH_API static monitor *create_monitor(fsw_monitor_type type,
                                    std::vector<std::string> paths,
                                    FSW_EVENT_CALLBACK *callback,
                                    void *context = nullptr);
@@ -692,7 +692,7 @@ namespace fsw
      * cannot be found.
      * @see fsw::monitor()
      */
-    static monitor *create_monitor(const std::string& name,
+    LIBFSWATCH_API static monitor *create_monitor(const std::string& name,
                                    std::vector<std::string> paths,
                                    FSW_EVENT_CALLBACK *callback,
                                    void *context = nullptr);
@@ -702,7 +702,7 @@ namespace fsw
      *
      * @return A vector with the available monitor types.
      */
-    static std::vector<std::string> get_types();
+    LIBFSWATCH_API static std::vector<std::string> get_types();
 
     /**
      * @brief Checks whether a monitor of the type specified by @p name exists.
@@ -713,7 +713,7 @@ namespace fsw
      * @param name The name of the monitor type to look for.
      * @return `true` if the type @p name exists, `false` otherwise.
      */
-    static bool exists_type(const std::string& name);
+    LIBFSWATCH_API static bool exists_type(const std::string& name);
 
     /**
      * @brief Checks whether a monitor of the type specified @p type.
@@ -722,7 +722,7 @@ namespace fsw
      * @return `true` if @p name specifies a valid monitor type, `false`
      * otherwise.
      */
-    static bool exists_type(const fsw_monitor_type& type);
+    LIBFSWATCH_API static bool exists_type(const fsw_monitor_type& type);
 
     /**
      * @brief Registers a @p creator for the specified monitor type @p name.
@@ -730,7 +730,7 @@ namespace fsw
      * @param name The name of the monitor type.
      * @param creator The monitor creator function.
      */
-    static void register_creator(const std::string& name,
+    LIBFSWATCH_API static void register_creator(const std::string& name,
                                  FSW_FN_MONITOR_CREATOR creator);
     /**
      * @brief Registers a @p creator for the specified monitor @p type.
@@ -738,7 +738,7 @@ namespace fsw
      * @param type The monitor type.
      * @param creator The monitor creator function.
      */
-    static void register_creator_by_type(const fsw_monitor_type& type,
+    LIBFSWATCH_API static void register_creator_by_type(const fsw_monitor_type& type,
                                          FSW_FN_MONITOR_CREATOR creator);
 
     monitor_factory() = delete;

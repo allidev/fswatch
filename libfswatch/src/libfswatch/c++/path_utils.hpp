@@ -26,6 +26,7 @@
 #ifndef FSW_PATH_UTILS_H
 #  define FSW_PATH_UTILS_H
 
+#  include "common.hpp"
 #  include <string>
 #  include <vector>
 #  include <sys/stat.h>
@@ -42,7 +43,7 @@ namespace fsw
    * Otherwise, it returns NULL, the contents of the array resolved_path are
    * undefined, and errno is set to indicate the error.
    */
-  char *fsw_realpath(const char *path, char *resolved_path);
+  LIBFSWATCH_API char *fsw_realpath(const char *path, char *resolved_path);
 
   /**
    * @brief Gets a vector of direct directory children.

@@ -28,6 +28,7 @@
 #ifndef LIBFSW_H
 #define LIBFSW_H
 
+#include "../c++/common.hpp"
 #include <stdbool.h>
 #include "libfswatch_types.h"
 #include "cevent.h"
@@ -195,7 +196,7 @@ extern "C"
   /**
    * Set the verbose mode.
    */
-  void fsw_set_verbose(bool verbose);
+  LIBFSWATCH_API void fsw_set_verbose(bool verbose);
 
 #  ifdef __cplusplus
 }

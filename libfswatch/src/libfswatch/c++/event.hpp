@@ -26,6 +26,7 @@
 #ifndef FSW_EVENT_H
 #  define FSW_EVENT_H
 
+#  include "common.hpp"
 #  include <string>
 #  include <ctime>
 #  include <vector>
@@ -54,35 +55,35 @@ namespace fsw
      * @param evt_time The time the event was raised.
      * @param flags The vector of flags specifying the type of the event.
      */
-    event(std::string path, time_t evt_time, std::vector<fsw_event_flag> flags);
+    LIBFSWATCH_API event(std::string path, time_t evt_time, std::vector<fsw_event_flag> flags);
 
     /**
      * @brief Destructs an event.
      *
      * This is a virtual destructor that performs no operations.
      */
-    virtual ~event();
+    LIBFSWATCH_API virtual ~event();
 
     /**
      * @brief Returns the path of the event.
      *
      * @return The path of the event.
      */
-    std::string get_path() const;
+    LIBFSWATCH_API std::string get_path() const;
 
     /**
      * @brief Returns the time of the event.
      *
      * @return The time of the event.
      */
-    time_t get_time() const;
+    LIBFSWATCH_API time_t get_time() const;
 
     /**
      * @brief Returns the flags of the event.
      *
      * @return The flags of the event.
      */
-    std::vector<fsw_event_flag> get_flags() const;
+    LIBFSWATCH_API std::vector<fsw_event_flag> get_flags() const;
 
     /**
      * @brief Get event flag by name.
@@ -91,7 +92,7 @@ namespace fsw
      * @return The event flag whose name is @p name, otherwise
      * @exception libfsw_exception if no event flag is found.
      */
-    static fsw_event_flag get_event_flag_by_name(const std::string& name);
+    LIBFSWATCH_API static fsw_event_flag get_event_flag_by_name(const std::string& name);
 
     /**
      * @brief Get the name of an event flag.
@@ -100,7 +101,7 @@ namespace fsw
      * @return The name of @p flag.
      * @exception libfsw_exception if no event flag is found.
      */
-    static std::string get_event_flag_name(const fsw_event_flag& flag);
+    LIBFSWATCH_API static std::string get_event_flag_name(const fsw_event_flag& flag);
 
   private:
     std::string path;
@@ -115,7 +116,7 @@ namespace fsw
    * @param flag The flag to print.
    * @return A reference to the stream.
    */
-  std::ostream& operator<<(std::ostream& out, const fsw_event_flag flag);
+  LIBFSWATCH_API std::ostream& operator<<(std::ostream& out, const fsw_event_flag flag);
 }
 
 #endif  /* FSW_EVENT_H */

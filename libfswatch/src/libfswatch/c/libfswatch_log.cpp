@@ -13,6 +13,9 @@
  * You should have received a copy of the GNU General Public License along with
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#ifdef HAVE_CONFIG_H
+#  include "libfswatch_config.h"
+#endif
 #include "libfswatch.h"
 #include "libfswatch_log.h"
 #include "../c++/string/string_utils.hpp"
