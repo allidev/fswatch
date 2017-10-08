@@ -49,7 +49,7 @@ AC_PROG_CXX([clang++ g++])
 
 # Initialize libtool
 LT_PREREQ([2.4.2])
-LT_INIT
+LT_INIT([win32-dll])
 AC_SUBST([LIBTOOL_DEPS])
 
 # OS-specific treatment
@@ -186,14 +186,6 @@ AS_VAR_IF([WINDOWS_AVAILABLE], ["yes"], [
 
 AM_CONDITIONAL([USE_CYGWIN], [test "x${CYGWIN_AVAILABLE}" = "xyes"])
 AS_VAR_IF([CYGWIN_AVAILABLE], ["yes"], [AC_DEFINE([HAVE_CYGWIN], [1], [CygWin API present.])])
-
-AM_COND_IF([USE_WINDOWS],
-  [AM_COND_IF([USE_CYGWIN],
-  [],
-  [
-    LT_INIT([win32-dll])
-  ])]
-)
 
 # Some compilers declare to conform to C++11 but the library does not.
 
