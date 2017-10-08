@@ -13,8 +13,13 @@
  * You should have received a copy of the GNU General Public License along with
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+#ifdef HAVE_CONFIG_H
+#  include "libfswatch_config.h"
+#endif
 #include "win_paths.hpp"
-//#include <sys/cygwin.h>
+#ifdef HAVE_CYGWIN
+#include <sys/cygwin.h>
+#endif
 #include "../libfswatch_exception.hpp"
 #include "../../gettext_defs.h"
 
@@ -26,7 +31,7 @@ namespace fsw
   {
     wstring posix_to_win_w(string path)
     {
-      /*
+#ifdef HAVE_CYGWIN
       void * raw_path = cygwin_create_path(CCP_POSIX_TO_WIN_W, path.c_str());
       if (raw_path == nullptr) throw libfsw_exception(_("cygwin_create_path could not allocate memory to convert the path."));
 
@@ -35,13 +40,14 @@ namespace fsw
       free(raw_path);
 
       return win_path;
-      */
+#else
       return wstring();
+#endif
     }
 
     string win_w_to_posix(wstring path)
     {
-      /*
+#ifdef HAVE_CYGWIN
       void * raw_path = cygwin_create_path(CCP_WIN_W_TO_POSIX, path.c_str());
       if (raw_path == nullptr) throw libfsw_exception(_("cygwin_create_path could not allocate memory to convert the path."));
 
@@ -50,8 +56,9 @@ namespace fsw
       free(raw_path);
 
       return posix_path;
-      */
+#else
       return string();
+#endif
     }
   }
 }
