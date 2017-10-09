@@ -91,7 +91,7 @@ extern "C"
    * returns FSW_OK, otherwise the initialization routine failed and the library
    * should not be usable.
    */
-  FSW_STATUS fsw_init_library();
+  LIBFSWATCH_API FSW_STATUS fsw_init_library();
 
   /**
    * This function creates a new monitor session using the specified monitor
@@ -100,24 +100,24 @@ extern "C"
    *
    * @see cmonitor.h for a list of all the available monitors.
    */
-  FSW_HANDLE fsw_init_session(const enum fsw_monitor_type type);
+  LIBFSWATCH_API FSW_HANDLE fsw_init_session(const enum fsw_monitor_type type);
 
   /**
    * Adds a path to watch to the specified session.  At least one path must be
    * added to the current session in order for it to be valid.
    */
-  FSW_STATUS fsw_add_path(const FSW_HANDLE handle, const char * path);
+  LIBFSWATCH_API FSW_STATUS fsw_add_path(const FSW_HANDLE handle, const char * path);
 
   /**
    * Adds the specified monitor property.
    */
-  FSW_STATUS fsw_add_property(const FSW_HANDLE handle, const char * name, const char * value);
+  LIBFSWATCH_API FSW_STATUS fsw_add_property(const FSW_HANDLE handle, const char * name, const char * value);
   
   /**
    * Sets the allow overflow flag of the monitor.  When this flag is set, a
    * monitor is allowed to overflow and report it as a change event.
    */
-  FSW_STATUS fsw_set_allow_overflow(const FSW_HANDLE handle, const bool allow_overflow);
+  LIBFSWATCH_API FSW_STATUS fsw_set_allow_overflow(const FSW_HANDLE handle, const bool allow_overflow);
 
   /**
    * Sets the callback the monitor invokes when some events are received.  The
@@ -125,33 +125,33 @@ extern "C"
    *
    * See cevent.h for the definition of FSW_CEVENT_CALLBACK.
    */
-  FSW_STATUS fsw_set_callback(const FSW_HANDLE handle,
+  LIBFSWATCH_API FSW_STATUS fsw_set_callback(const FSW_HANDLE handle,
                               const FSW_CEVENT_CALLBACK callback,
                               void * data);
 
   /**
    * Sets the latency of the monitor.  By default, the latency is set to 1 s.
    */
-  FSW_STATUS fsw_set_latency(const FSW_HANDLE handle, const double latency);
+  LIBFSWATCH_API FSW_STATUS fsw_set_latency(const FSW_HANDLE handle, const double latency);
 
   /**
    * Determines whether the monitor recursively scans each watched path or not.
    * Recursive scanning is an optional feature which could not be implemented
    * by all the monitors.  By default, recursive scanning is disabled.
    */
-  FSW_STATUS fsw_set_recursive(const FSW_HANDLE handle, const bool recursive);
+  LIBFSWATCH_API FSW_STATUS fsw_set_recursive(const FSW_HANDLE handle, const bool recursive);
 
   /**
    * Determines whether the monitor only watches a directory when performing a
    * recursive scan.  By default, a monitor accepts all kinds of files.
    */
-  FSW_STATUS fsw_set_directory_only(const FSW_HANDLE handle, const bool directory_only);
+  LIBFSWATCH_API FSW_STATUS fsw_set_directory_only(const FSW_HANDLE handle, const bool directory_only);
 
   /**
    * Determines whether a symbolic link is followed or not.  By default, a
    * symbolic link are not followed.
    */
-  FSW_STATUS fsw_set_follow_symlinks(const FSW_HANDLE handle,
+  LIBFSWATCH_API FSW_STATUS fsw_set_follow_symlinks(const FSW_HANDLE handle,
                                      const bool follow_symlinks);
 
   /**
@@ -159,7 +159,7 @@ extern "C"
    *
    * See cfilter.h for the definition of fsw_event_type_filter.
    */
-  FSW_STATUS fsw_add_event_type_filter(const FSW_HANDLE handle,
+  LIBFSWATCH_API FSW_STATUS fsw_add_event_type_filter(const FSW_HANDLE handle,
                                        const fsw_event_type_filter event_type);
 
   /**
@@ -169,29 +169,29 @@ extern "C"
    *
    * See cfilter.h for the definition of fsw_cmonitor_filter.
    */
-  FSW_STATUS fsw_add_filter(const FSW_HANDLE handle,
+  LIBFSWATCH_API FSW_STATUS fsw_add_filter(const FSW_HANDLE handle,
                             const fsw_cmonitor_filter filter);
 
   /**
    * Starts the monitor if it is properly configured.  Depending on the type of
    * monitor this call might return when a monitor is stopped or not.
    */
-  FSW_STATUS fsw_start_monitor(const FSW_HANDLE handle);
+  LIBFSWATCH_API FSW_STATUS fsw_start_monitor(const FSW_HANDLE handle);
 
   /**
    * Destroys an existing session and invalidates its handle.
    */
-  FSW_STATUS fsw_destroy_session(const FSW_HANDLE handle);
+  LIBFSWATCH_API FSW_STATUS fsw_destroy_session(const FSW_HANDLE handle);
 
   /**
    * Gets the last error code.
    */
-  FSW_STATUS fsw_last_error();
+  LIBFSWATCH_API FSW_STATUS fsw_last_error();
 
   /**
    * Check whether the verbose mode is active.
    */
-  bool fsw_is_verbose();
+  LIBFSWATCH_API bool fsw_is_verbose();
 
   /**
    * Set the verbose mode.
