@@ -378,7 +378,11 @@
 #  include "libfswatch_config.h"
 #endif
 
+#ifndef BUILD_WINDOWS_NATIVE
 #include "gettext_defs.h"
+#else
+#include "../gettext_defs.h"
+#endif
 #include <iostream>
 #ifdef HAVE_CXX_MUTEX
 #  include <mutex>

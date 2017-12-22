@@ -19,7 +19,11 @@
 
 #ifdef HAVE_WINDOWS
 
-#  include "gettext_defs.h"
+#ifndef BUILD_WINDOWS_NATIVE
+#include "gettext_defs.h"
+#else
+#include "../../gettext_defs.h"
+#endif
 #  include "win_error_message.hpp"
 #  include "../../c/libfswatch_log.h"
 

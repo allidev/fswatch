@@ -24,34 +24,13 @@
     <ClCompile Include="c\libfswatch_log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="c\windows\realpath.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="c++\event.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\fen_monitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\fsevents_monitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\inotify_monitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\kqueue_monitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="c++\libfswatch_exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="c++\monitor.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\path_utils.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="c++\poll_monitor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="c++\windows_monitor.cpp">
@@ -104,28 +83,13 @@
     <ClInclude Include="c\libfswatch_types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c\windows\realpath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="c++\common.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c++\event.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="c++\fen_monitor.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="c++\filter.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c++\fsevents_monitor.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c++\inotify_monitor.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c++\kqueue_monitor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c++\libfswatch_exception.hpp">
@@ -138,12 +102,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c++\monitor.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c++\path_utils.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c++\poll_monitor.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="c++\windows_monitor.hpp">

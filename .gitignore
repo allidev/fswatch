@@ -138,3 +138,4 @@ man/fswatch.7
 # Windows Visual Studio files
 libfswatch/src/libfswatch/libfswatch.VC.VC.opendb
 libfswatch/src/libfswatch/libfswatch.VC.db
+libfswatch/src/libfswatch/Debug/

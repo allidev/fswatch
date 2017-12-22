@@ -16,7 +16,11 @@
 #ifdef HAVE_CONFIG_H
 #  include "libfswatch_config.h"
 #endif
+#ifndef BUILD_WINDOWS_NATIVE
 #include "gettext_defs.h"
+#else
+#include "../gettext_defs.h"
+#endif
 #include "event.hpp"
 #include "libfswatch_exception.hpp"
 #include <map>

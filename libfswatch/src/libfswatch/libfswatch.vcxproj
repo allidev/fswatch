@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBFSWATCH_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LIBFSWATCH_COMMON_EXPORTS;BUILD_WINDOWS_NATIVE;HAVE_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -98,14 +98,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="c++\event.cpp" />
-    <ClCompile Include="c++\fen_monitor.cpp" />
-    <ClCompile Include="c++\fsevents_monitor.cpp" />
-    <ClCompile Include="c++\inotify_monitor.cpp" />
-    <ClCompile Include="c++\kqueue_monitor.cpp" />
     <ClCompile Include="c++\libfswatch_exception.cpp" />
     <ClCompile Include="c++\monitor.cpp" />
-    <ClCompile Include="c++\path_utils.cpp" />
-    <ClCompile Include="c++\poll_monitor.cpp" />
     <ClCompile Include="c++\string\string_utils.cpp" />
     <ClCompile Include="c++\windows\win_directory_change_event.cpp" />
     <ClCompile Include="c++\windows\win_error_message.cpp" />
@@ -116,22 +110,15 @@
     <ClCompile Include="c\cevent.cpp" />
     <ClCompile Include="c\libfswatch.cpp" />
     <ClCompile Include="c\libfswatch_log.cpp" />
-    <ClCompile Include="c\windows\realpath.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="c++\common.hpp" />
     <ClInclude Include="c++\event.hpp" />
-    <ClInclude Include="c++\fen_monitor.hpp" />
     <ClInclude Include="c++\filter.hpp" />
-    <ClInclude Include="c++\fsevents_monitor.hpp" />
-    <ClInclude Include="c++\inotify_monitor.hpp" />
-    <ClInclude Include="c++\kqueue_monitor.hpp" />
     <ClInclude Include="c++\libfswatch_exception.hpp" />
     <ClInclude Include="c++\libfswatch_map.hpp" />
     <ClInclude Include="c++\libfswatch_set.hpp" />
     <ClInclude Include="c++\monitor.hpp" />
-    <ClInclude Include="c++\path_utils.hpp" />
-    <ClInclude Include="c++\poll_monitor.hpp" />
     <ClInclude Include="c++\string\string_utils.hpp" />
     <ClInclude Include="c++\windows\win_directory_change_event.hpp" />
     <ClInclude Include="c++\windows\win_error_message.hpp" />
@@ -146,7 +133,6 @@
     <ClInclude Include="c\libfswatch.h" />
     <ClInclude Include="c\libfswatch_log.h" />
     <ClInclude Include="c\libfswatch_types.h" />
-    <ClInclude Include="c\windows\realpath.h" />
     <ClInclude Include="gettext.h" />
     <ClInclude Include="gettext_defs.h" />
   </ItemGroup>

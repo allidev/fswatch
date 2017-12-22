@@ -24,11 +24,12 @@ namespace fsw
 
     string wstring_to_string(wchar_t * s)
     {
-      int buf_size = WideCharToMultiByte(CP_UTF8, 0, s, -1, NULL, 0, NULL, NULL);
-      char buf[buf_size];
-      WideCharToMultiByte(CP_UTF8, 0, s, -1, buf, buf_size, NULL, NULL);
+      //int buf_size = WideCharToMultiByte(CP_UTF8, 0, s, -1, NULL, 0, NULL, NULL);
+      //char buf[buf_size];
+      //WideCharToMultiByte(CP_UTF8, 0, s, -1, buf, buf_size, NULL, NULL);
 
-      return string(buf);
+      //return string(buf);
+	  return string();
     }
 
     string wstring_to_string(const wstring & s)

@@ -19,7 +19,11 @@
 
 #ifdef HAVE_WINDOWS
 
-#  include "gettext_defs.h"
+#ifndef BUILD_WINDOWS_NATIVE
+#include "gettext_defs.h"
+#else
+#include "../gettext_defs.h"
+#endif
 #  include "windows_monitor.hpp"
 #  include "libfswatch_map.hpp"
 #  include "libfswatch_set.hpp"
@@ -29,12 +33,18 @@
 #  include <set>
 #  include <iostream>
 #  include <memory>
+#ifdef BUILD_WINDOWS_NATIVE
+#  include <chrono>
+#  include <thread>
+#endif
 #  include <sys/types.h>
 #  include <cstdlib>
 #  include <cstring>
 #  include <ctime>
 #  include <cstdio>
+#ifndef BUILD_WINDOWS_NATIVE
 #  include <unistd.h>
+#endif
 #  include <fcntl.h>
 #  include <windows.h>
 #  include "./windows/win_handle.hpp"
@@ -235,7 +245,11 @@ namespace fsw
       run_guard.unlock();
 #endif
 
+#ifndef BUILD_WINDOWS_NATIVE
       sleep(latency);
+#else
+	  this_thread::sleep_for(chrono::seconds((long long)latency));
+#endif
 
       for (const auto & path : load->win_paths)
       {

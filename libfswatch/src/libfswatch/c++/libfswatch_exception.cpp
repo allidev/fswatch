@@ -14,7 +14,11 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "libfswatch_exception.hpp"
+#ifndef BUILD_WINDOWS_NATIVE
 #include "gettext_defs.h"
+#else
+#include "../gettext_defs.h"
+#endif
 
 using namespace std;
 
