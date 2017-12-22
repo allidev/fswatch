@@ -135,3 +135,6 @@ man/fswatch.7
 # include ignored files
 !config.h.cmakein
 
+# Windows Visual Studio files
+libfswatch/src/libfswatch/libfswatch.VC.VC.opendb
+libfswatch/src/libfswatch/libfswatch.VC.db
