@@ -106,8 +106,9 @@ namespace fsw
   bool directory_change_event::try_read()
   {
     bool ret = GetOverlappedResult(handle, overlapped.get(), &bytes_returned, FALSE);
+	DWORD err = GetLastError();
 
-    read_error = win_error_message::current();
+	read_error = win_error_message(err);
 
     FSW_ELOGF(_("GetOverlappedResult: %s\n"), win_strings::wstring_to_string((wstring) read_error).c_str());
 
