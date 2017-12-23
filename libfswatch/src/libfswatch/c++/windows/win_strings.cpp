@@ -14,11 +14,8 @@
  * this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "win_strings.hpp"
-#ifndef BUILD_WINDOWS_NATIVE
 #include <windows.h>
-#else
-#include <codecvt>
-#endif
+#include <vector>
 
 using namespace std;
 
@@ -30,26 +27,15 @@ namespace fsw
 
 		string wstring_to_string(wchar_t * s)
 		{
-#ifndef BUILD_WINDOWS_NATIVE
 			int buf_size = WideCharToMultiByte(CP_UTF8, 0, s, -1, NULL, 0, NULL, NULL);
-			char buf[buf_size];
-			WideCharToMultiByte(CP_UTF8, 0, s, -1, buf, buf_size, NULL, NULL);
-			return string(buf);
-#else
-			wstring str(s);
-			return wstring_to_string(str);
-#endif
+			vector<char> buf(buf_size);
+			WideCharToMultiByte(CP_UTF8, 0, s, -1, &buf[0], buf_size, NULL, NULL);
+			return string(buf.begin(), buf.end());
 		}
 
 		string wstring_to_string(const wstring & s)
 		{
-#ifndef BUILD_WINDOWS_NATIVE
 			return wstring_to_string((wchar_t *)s.c_str());
-#else
-			wstring_convert<codecvt_utf8_utf16<wchar_t>> converter;
-			string ret = converter.to_bytes(s);
-			return ret;
-#endif
 		}
 	}
 }

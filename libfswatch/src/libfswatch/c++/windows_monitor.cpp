@@ -107,7 +107,7 @@ namespace fsw
     }
   }
 
-  bool windows_monitor::init_search_for_path(const wstring path)
+  bool windows_monitor::init_search_for_path(const wstring& path)
   {
     FSW_ELOGF(_("Initializing search structures for %s.\n"), win_strings::wstring_to_string(path).c_str());
 
@@ -142,12 +142,12 @@ namespace fsw
     return true;
   }
 
-  void windows_monitor::stop_search_for_path(const wstring path)
+  void windows_monitor::stop_search_for_path(const wstring& path)
   {
     load->dce_by_path.erase(path);
   }
 
-  bool windows_monitor::is_path_watched(wstring path)
+  bool windows_monitor::is_path_watched(const wstring& path)
   {
     return (load->dce_by_path.find(path) != load->dce_by_path.end());
   }
