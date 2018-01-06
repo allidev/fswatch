@@ -140,3 +140,7 @@ libfswatch/src/libfswatch/libfswatch.VC.VC.opendb
 libfswatch/src/libfswatch/libfswatch.VC.db
 libfswatch/src/libfswatch/Debug/
 libfswatch/src/libfswatch/Release/
+
+# Build folders
+bld*/
+

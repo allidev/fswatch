@@ -127,6 +127,10 @@ or, which is equivalent, config.h will contain the following definition:
 
   #define ENABLE_NLS 1
 
+Build for iOS
+cmake -GXcode -DIOS=1 -DCMAKE_OSX_ARCHITECTURES="x86_64 i386 armv7 arm64" ..
+xcodebuild -sdk iphoneos10.2
+
 -----
 
 Copyright (c) 2014-2015 Enrico M. Crisostomo

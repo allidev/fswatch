@@ -119,7 +119,7 @@ if (UNIX AND NOT APPLE AND NOT ANDROID)
     set(EXTRA_LIBS pthread)
 endif (UNIX AND NOT APPLE AND NOT ANDROID)
 
-if (APPLE)
+if (APPLE AND NOT IOS)
     CHECK_INCLUDE_FILES(CoreServices/CoreServices.h HAVE_FSEVENTS_FILE_EVENTS)
 
     if (HAVE_FSEVENTS_FILE_EVENTS)
@@ -132,7 +132,7 @@ if (APPLE)
                 src/libfswatch/c++/fsevents_monitor.hpp)
 
     endif (HAVE_FSEVENTS_FILE_EVENTS)
-endif (APPLE)
+endif (APPLE AND NOT IOS)
 
 CHECK_STRUCT_HAS_MEMBER("struct stat" st_mtime sys/stat.h HAVE_STRUCT_STAT_ST_MTIME)
 
