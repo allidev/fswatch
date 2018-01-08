@@ -129,7 +129,7 @@ or, which is equivalent, config.h will contain the following definition:
 
 Build for iOS
 cmake -GXcode -DIOS=1 -DCMAKE_OSX_ARCHITECTURES="x86_64 i386 armv7 arm64" ..
-xcodebuild -sdk iphoneos10.2
+xcodebuild -target libfswatch -configuration Release -arch arm64 -arch armv7 -arch armv7s only_active_arch=no defines_module=yes -sdk "iphoneos"
 
 -----
 
